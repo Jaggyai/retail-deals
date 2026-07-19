@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JaggyDeals – Canada's Best Retail Deals | Amazon, Walmart, Best Buy & More</title>
+  <meta name="description" content="JaggyDeals is Canada's trusted affiliate deals hub. Find the best sales and discounts from Amazon Canada, Walmart Canada, Best Buy, Canadian Tire, Sport Chek, and more — curated for Canadians." />
+  <meta name="keywords" content="Canadian deals, Amazon Canada deals, Walmart Canada sale, Best Buy Canada, Canadian Tire, affiliate deals Canada, best deals Canada 2024" />
+  <meta property="og:title" content="JaggyDeals – Canada's Best Retail Deals" />
+  <meta property="og:description" content="Curated deals from Canada's top retailers — updated weekly by Canadians, for Canadians." />
+  <meta property="og:type" content="website" />
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:      #0a1628;
+      --navy-mid:  #0f2040;
+      --navy-card: #132238;
+      --orange:    #ff6b2b;
+      --orange-lt: #ff8c55;
+      --red:       #e63329;
+      --white:     #ffffff;
+      --off-white: #f4f6f9;
+      --muted:     #8a9ab5;
+      --border:    #1e3355;
+      --green:     #22c55e;
+      --font-sans: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--navy); }
+    ::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 3px; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-tag {
+      display: inline-block;
+      background: rgba(255,107,43,0.15);
+      color: var(--orange);
+      border: 1px solid rgba(255,107,43,0.35);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--white);
+    }
+    .section-sub {
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 1.05rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      padding: 12px 24px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s ease;
+    }
+    .btn-primary {
+      background: var(--orange);
+      color: var(--white);
+    }
+    .btn-primary:hover { background: var(--orange-lt); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(255,107,43,0.4); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--orange); color: var(--orange); }
+
+    /* ===== HEADER / NAV ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,22,40,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: var(--orange);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .logo-text {
+      font-size: 1.35rem;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+    .logo-text span { color: var(--orange); }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { display: flex; gap: 10px; align-items: center; }
+    .flag { font-size: 1.1rem; }
+
+    /* ===== ANNOUNCEMENT BAR ===== */
+    .announce-bar {
+      background: linear-gradient(90deg, var(--orange), #e63329);
+      text-align: center;
+      padding: 9px 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .announce-bar a { color: var(--white); text-decoration: underline; }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      padding: 90px 20px 80px;
+      overflow: hidden;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, #1a3a6e 0%, var(--navy) 70%);
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 15% 50%, rgba(255,107,43,0.08) 0%, transparent 50%),
+        radial-gradient(circle at 85% 20%, rgba(230,51,41,0.07) 0%, transparent 40%);
+      pointer-events: none;
+    }
+    /* grid dots */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .live-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 3px rgba(34,197,94,0.25);
+      animation: pulse 2s ease infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 3px rgba(34,197,94,0.25); }
+      50% { box-shadow: 0 0 0 7px rgba(34,197,94,0.08); }
+    }
+    .live-text {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--green);
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      margin-bottom: 20px;
+    }
+    .hero h1 .accent { color: var(--orange); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 480px;
+      line-height: 1.7;
+    }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 44px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: var(--orange);
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 2px;
+    }
+    /* hero visual */
+    .hero-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hero-card-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .mini-deal-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .mini-deal-card:hover { transform: translateY(-3px); border-color: var(--orange); }
+    .mini-deal-card.featured {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mini-icon {
+      width: 48px; height: 48px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .mini-icon.orange { background: rgba(255,107,43,0.15); }
+    .mini-icon.blue   { background: rgba(0,102,204,0.15); }
+    .mini-icon.red    { background: rgba(230,51,41,0.15); }
+    .mini-icon.green  { background: rgba(34,197,94,0.12); }
+    .mini-deal-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .mini-deal-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mini-price-sale { color: var(--orange); font-weight: 800; font-size: 1rem; }
+    .mini-price-orig { color: var(--muted); font-size: 0.8rem; text-decoration: line-through; }
+    .mini-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: rgba(34,197,94,0.15);
+      color: var(--green);
+      border: 1px solid rgba(34,197,94,0.3);
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .mini-store {
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    /* ===== TICKER ===== */
+    .ticker-wrap {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 12px 0;
+    }
+    .ticker {
+      display: flex;
+      gap: 60px;
+      animation: ticker 28s linear infinite;
+      white-space: nowrap;
+      width: max-content;
+    }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+    .ticker-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .ticker-item strong { color: var(--white); }
+    .ticker-item .tick-badge {
+      background: var(--orange);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 4px;
+    }
+    .ticker-sep { color: var(--border); }
+
+    /* ===== CATEGORIES ===== */
+    .categories { padding: 60px 0 20px; }
+    .cat-grid {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scrollbar-width: none;
+    }
+    .cat-grid::-webkit-scrollbar { display: none; }
+    .cat-chip {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 10px 18px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cat-chip:hover, .cat-chip.active {
+      background: rgba(255,107,43,0.1);
+      border-color: var(--orange);
+      color: var(--orange);
+    }
+    .cat-chip .chip-icon { font-size: 1.05rem; }
+
+    /* ===== FEATURED DEALS ===== */
+    .featured-deals { padding: 60px 0; }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .deals-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .deal-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .deal-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--orange);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.4);
+    }
+    .deal-card-img {
+      position: relative;
+      height: 200px;
+      background: linear-gradient(135deg, #1a3a6e 0%, #0f2040 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      overflow: hidden;
+    }
+    .deal-card-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 60%, rgba(255,107,43,0.08), transparent 60%);
+    }
+    .deal-badge-corner {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--red);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+    .deal-badge-corner.hot { background: var(--orange); }
+    .deal-badge-corner.new { background: #7c3aed; }
+    .deal-store-badge {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      background: rgba(10,22,40,0.85);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+    .deal-body { padding: 18px; }
+    .deal-category {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 7px;
+    }
+    .deal-name {
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 14px;
+      color: var(--white);
+      min-height: 2.8em;
+    }
+    .deal-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .deal-sale { font-size: 1.5rem; font-weight: 900; color: var(--orange); }
+    .deal-orig { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; }
+    .deal-savings {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--green);
+      margin-bottom: 16px;
+    }
+    .deal-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-shop {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 11px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-shop:hover { background: var(--orange-lt); transform: translateY(-1px); }
+    .btn-save {
+      width: 40px; height: 40px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: transparent;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+    .btn-save:hover { border-color: var(--orange); background: rgba(255,107,43,0.1); }
+    /* deal card — expiry timer */
+    .deal-timer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(230,51,41,0.1);
+      border: 1px solid rgba(230,51,41,0.25);
+      border-radius: 6px;
+      padding: 5px 10px;
+      font-size: 0.72rem;
+      color: #f87171;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    /* ===== STORE PARTNERS ===== */
+    .store-partners { padding: 70px 0; background: var(--navy-mid); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .partners-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 16px;
+      margin-top: 44px;
+    }
+    .partner-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      transition: all 0.2s;
+      cursor: default;
+    }
+    .partner-card:hover { border-color: var(--orange); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    .partner-logo-wrap {
+      width: 56px; height: 56px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem;
+    }
+    .partner-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-align: center;
+      color: var(--white);
+    }
+    .partner-cat {
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .partner-deals-count {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--orange);
+      background: rgba(255,107,43,0.1);
+      border-radius: 99px;
+      padding: 2px 10px;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works { padding: 80px 0; }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 20%, var(--border) 80%, transparent);
+    }
+    .step-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .step-num {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: var(--navy-card);
+      border: 2px solid var(--orange);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--orange);
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .step-desc {
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* ===== DEAL OF THE WEEK ===== */
+    .deal-of-week { padding: 70px 0; }
+    .dotw-card {
+      background: linear-gradient(135deg, #1a3a6e 0%, #132238 50%, var(--navy-card) 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .dotw-card::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 320px; height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,43,0.12), transparent 70%);
+    }
+    .dotw-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,107,43,0.15);
+      border: 1px solid rgba(255,107,43,0.4);
+      color: var(--orange);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+    .dotw-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .dotw-desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .dotw-pricing {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 8px;
+    }
+    .dotw-sale { font-size: 2.2rem; font-weight: 900; color: var(--orange); }
+    .dotw-orig { font-size: 1.1rem; color: var(--muted); text-decoration: line-through; }
+    .dotw-savings { font-size: 0.85rem; color: var(--green); font-weight: 700; margin-bottom: 28px; }
+    .dotw-countdown {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    .countdown-block {
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      text-align: center;
+      min-width: 56px;
+    }
+    .countdown-num {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: var(--orange);
+      display: block;
+      font-variant-numeric: tabular-nums;
+    }
+    .countdown-label {
+      font-size: 0.6rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .dotw-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      height: 280px;
+      font-size: 7rem;
+      position: relative;
+      z-index: 1;
+    }
+    .dotw-visual::after {
+      content: 'Amazon.ca Exclusive';
+      position: absolute;
+      bottom: 14px;
+      left: 0; right: 0;
+      text-align: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== NEWSLETTER ===== */
+    .newsletter { padding: 70px 0; }
+    .newsletter-inner {
+      background: linear-gradient(135deg, var(--navy-card) 0%, #1a3a6e 100%);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .newsletter-inner::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 400px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,107,43,0.1), transparent 70%);
+    }
+    .nl-icon {
+      font-size: 2.5rem;
+      margin-bottom: 16px;
+    }
+    .nl-heading {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+    .nl-sub {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 480px;
+      margin: 0 auto 32px;
+    }
+    .nl-form {
+      display: flex;
+      gap: 10px;
+      max-width: 480px;
+      margin: 0 auto 16px;
+    }
+    .nl-input {
+      flex: 1;
+      background: var(--navy);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 13px 18px;
+      color: var(--white);
+      font-size: 0.9rem;
+      font-family: var(--font-sans);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .nl-input:focus { border-color: var(--orange); }
+    .nl-input::placeholder { color: var(--muted); }
+    .nl-disclaimer {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .nl-perks {
+      display: flex;
+      justify-content: center;
+      gap: 28px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+    .nl-perk {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+    .nl-perk span { color: var(--green); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--navy-mid);
+      border-top: 1px solid var(--border);
+      padding: 56px 0 32px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand .logo-text { font-size: 1.5rem; }
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 12px;
+      line-height: 1.7;
+      max-width: 280px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      color: var(--muted);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .social-btn:hover { border-color: var(--orange); color: var(--orange); }
+    .footer-col h4 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a {
+      font-size: 0.88rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .affiliate-disclosure {
+      background: rgba(255,107,43,0.07);
+      border: 1px solid rgba(255,107,43,0.2);
+      border-radius: 8px;
+      padding: 14px 18px;
+      font-size: 0.72rem;
+      color: var(--muted);
+      line-height: 1.6;
+      max-width: 580px;
+    }
+    .affiliate-disclosure strong { color: var(--orange); }
+
+    /* ===== FLOATING PROMO ===== */
+    .float-promo {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      background: var(--navy-card);
+      border: 1px solid var(--orange);
+      border-radius: 14px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+      cursor: pointer;
+      transition: transform 0.2s;
+      max-width: 280px;
+    }
+    .float-promo:hover { transform: translateY(-3px); }
+    .float-icon { font-size: 1.5rem; }
+    .float-text { font-size: 0.8rem; }
+    .float-text strong { display: block; font-size: 0.88rem; margin-bottom: 2px; }
+    .float-text span { color: var(--muted); font-size: 0.75rem; }
+    .float-close {
+      position: absolute;
+      top: 6px; right: 8px;
+      background: none; border: none;
+      color: var(--muted); cursor: pointer;
+      font-size: 0.8rem; line-height: 1;
+      padding: 2px;
+    }
+    .float-close:hover { color: var(--white); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .partners-grid { grid-template-columns: repeat(3, 1fr); }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid::before { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { display: none; }
+      .hero h1 { font-size: 2rem; }
+      .dotw-card { grid-template-columns: 1fr; padding: 30px; }
+      .dotw-visual { height: 180px; }
+      .newsletter-inner { padding: 36px 24px; }
+      .nl-form { flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; }
+      .partners-grid { grid-template-columns: repeat(2, 1fr); }
+      .steps-grid { grid-template-columns: 1fr; }
+      .hero-stats { flex-wrap: wrap; gap: 20px; }
+      .float-promo { display: none; }
+    }
+    @media (max-width: 480px) {
+      .deals-grid { grid-template-columns: 1fr; }
+      .hero { padding: 50px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar">
+  🇨🇦 New deals added daily — <a href="#featured-deals">Shop today's top Canadian deals ↓</a>
+</div>
+
+<!-- HEADER -->
+<header>
+  <nav class="nav-inner">
+    <div class="logo">
+      <div class="logo-icon">🍁</div>
+      <div class="logo-text">Jaggy<span>Deals</span></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#featured-deals">Deals</a></li>
+      <li><a href="#store-partners">Stores</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#newsletter">Newsletter</a></li>
+    </ul>
+    <div class="nav-cta">
+      <span class="flag">🇨🇦</span>
+      <a href="#newsletter" class="btn btn-primary">Get Deal Alerts</a>
+    </div>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="live-dot"></div>
+        <span class="live-text">Live deals updated daily</span>
+      </div>
+      <h1>Canada's Best <span class="accent">Retail Deals</span> — All in One Place</h1>
+      <p class="hero-sub">Hand-picked discounts from Amazon Canada, Walmart, Best Buy, Canadian Tire, and more. We find the deals — you just shop and save.</p>
+      <div class="hero-actions">
+        <a href="#featured-deals" class="btn btn-primary">
+          🔥 Browse Today's Deals
+        </a>
+        <a href="#newsletter" class="btn btn-outline">
+          📬 Get Email Alerts
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">500+</div>
+          <div class="stat-label">Active Deals</div>
+        </div>
+        <div>
+          <div class="stat-num">6</div>
+          <div class="stat-label">Partner Stores</div>
+        </div>
+        <div>
+          <div class="stat-num">$180</div>
+          <div class="stat-label">Avg. Savings / Month</div>
+        </div>
+      </div>
+    </div>
+    <!-- hero visual cards -->
+    <div class="hero-visual">
+      <div class="mini-deal-card featured">
+        <div class="mini-icon orange">🏃</div>
+        <div>
+          <div class="mini-deal-name">Under Desk Treadmill — Walking Pad Pro</div>
+          <div class="mini-deal-info">
+            <span class="mini-price-sale">$289</span>
+            <span class="mini-price-orig">$429</span>
+            <span class="mini-badge">-33%</span>
+          </div>
+          <div class="mini-store">Amazon Canada • Free shipping</div>
+        </div>
+      </div>
+      <div class="hero-card-stack">
+        <div class="mini-deal-card">
+          <div class="mini-icon blue">❄️</div>
+          <div class="mini-deal-name">Dyson V8 Cordless</div>
+          <div class="mini-deal-info">
+            <span class="mini-price-sale">$349</span>
+            <span class="mini-price-orig">$499</span>
+          </div>
+          <div class="mini-store">Best Buy Canada</div>
+        </div>
+        <div class="mini-deal-card">
+          <div class="mini-icon green">🍳</div>
+          <div class="mini-deal-name">Instant Pot Duo 7-in-1</div>
+          <div class="mini-deal-info">
+            <span class="mini-price-sale">$79</span>
+            <span class="mini-price-orig">$129</span>
+          </div>
+          <div class="mini-store">Walmart Canada</div>
+        </div>
+        <div class="mini-deal-card">
+          <div class="mini-icon red">💪</div>
+          <div class="mini-deal-name">Adjustable Dumbbells Set</div>
+          <div class="mini-deal-info">
+            <span class="mini-price-sale">$119</span>
+            <span class="mini-price-orig">$199</span>
+          </div>
+          <div class="mini-store">Amazon Canada</div>
+        </div>
+        <div class="mini-deal-card">
+          <div class="mini-icon orange">🎧</div>
+          <div class="mini-deal-name">Sony WH-1000XM5 Headphones</div>
+          <div class="mini-deal-info">
+            <span class="mini-price-sale">$299</span>
+            <span class="mini-price-orig">$449</span>
+          </div>
+          <div class="mini-store">Best Buy Canada</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-wrap" aria-hidden="true">
+  <div class="ticker">
+    <div class="ticker-item"><span class="tick-badge">NEW</span> <strong>Ninja Air Fryer</strong> — 45% off at Walmart Canada</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">HOT</span> <strong>Ring Video Doorbell</strong> — $40 off at Amazon.ca</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">SALE</span> <strong>Weber BBQ Grill</strong> — Save $120 at Canadian Tire</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">HOT</span> <strong>Hisense 55" 4K TV</strong> — $449 at Best Buy Canada</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">NEW</span> <strong>Lululemon Align Leggings</strong> — 30% off at Sport Chek</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">SALE</span> <strong>KitchenAid Stand Mixer</strong> — Save $200 at The Source</div>
+    <span class="ticker-sep">•</span>
+    <!-- duplicate for seamless loop -->
+    <div class="ticker-item"><span class="tick-badge">NEW</span> <strong>Ninja Air Fryer</strong> — 45% off at Walmart Canada</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">HOT</span> <strong>Ring Video Doorbell</strong> — $40 off at Amazon.ca</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">SALE</span> <strong>Weber BBQ Grill</strong> — Save $120 at Canadian Tire</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">HOT</span> <strong>Hisense 55" 4K TV</strong> — $449 at Best Buy Canada</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">NEW</span> <strong>Lululemon Align Leggings</strong> — 30% off at Sport Chek</div>
+    <span class="ticker-sep">•</span>
+    <div class="ticker-item"><span class="tick-badge">SALE</span> <strong>KitchenAid Stand Mixer</strong> — Save $200 at The Source</div>
+    <span class="ticker-sep">•</span>
+  </div>
+</div>
+
+<!-- CATEGORIES -->
+<section class="categories">
+  <div class="container">
+    <div class="cat-grid">
+      <div class="cat-chip active"><span class="chip-icon">🔥</span> All Deals</div>
+      <div class="cat-chip"><span class="chip-icon">🏠</span> Home & Kitchen</div>
+      <div class="cat-chip"><span class="chip-icon">💪</span> Fitness</div>
+      <div class="cat-chip"><span class="chip-icon">📱</span> Tech & Gadgets</div>
+      <div class="cat-chip"><span class="chip-icon">✨</span> Beauty</div>
+      <div class="cat-chip"><span class="chip-icon">🍳</span> Kitchen Appliances</div>
+      <div class="cat-chip"><span class="chip-icon">👟</span> Sports & Outdoor</div>
+      <div class="cat-chip"><span class="chip-icon">🛏️</span> Bedroom</div>
+      <div class="cat-chip"><span class="chip-icon">🧹</span> Cleaning</div>
+      <div class="cat-chip"><span class="chip-icon">📦</span> Amazon Finds</div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED DEALS -->
+<section class="featured-deals" id="featured-deals">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="section-tag">🍁 Featured Deals</div>
+        <h2 class="section-heading">Today's Best Picks</h2>
+        <p class="section-sub">Curated from Amazon.ca, Walmart, Best Buy & more — updated daily.</p>
+      </div>
+      <a href="#" class="btn btn-outline">View All Deals →</a>
+    </div>
+    <div class="deals-grid">
+
+      <!-- Card 1 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🏃
+          <span class="deal-badge-corner hot">🔥 HOT</span>
+          <span class="deal-store-badge">Amazon.ca</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Fitness</div>
+          <div class="deal-name">Walking Pad Under-Desk Treadmill — Foldable with Remote</div>
+          <div class="deal-timer">⏱ Ends in 2 days · Limited stock</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$289.99</span>
+            <span class="deal-orig">$429.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $140 (33% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🎧
+          <span class="deal-badge-corner">-33%</span>
+          <span class="deal-store-badge">Best Buy CA</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Tech & Audio</div>
+          <div class="deal-name">Sony WH-1000XM5 Wireless Noise-Cancelling Headphones</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$299.99</span>
+            <span class="deal-orig">$449.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $150 (33% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🍳
+          <span class="deal-badge-corner hot">🔥 HOT</span>
+          <span class="deal-store-badge">Walmart CA</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Kitchen Appliances</div>
+          <div class="deal-name">Instant Pot Duo 7-in-1 Electric Pressure Cooker 6 Qt</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$79.99</span>
+            <span class="deal-orig">$129.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $50 (38% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🌿
+          <span class="deal-badge-corner new">NEW</span>
+          <span class="deal-store-badge">Amazon.ca</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Beauty & Skincare</div>
+          <div class="deal-name">CeraVe Moisturizing Cream 340g — Dermatologist Recommended</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$18.97</span>
+            <span class="deal-orig">$29.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $11 (37% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          💪
+          <span class="deal-badge-corner">-40%</span>
+          <span class="deal-store-badge">Amazon.ca</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Fitness</div>
+          <div class="deal-name">Adjustable Dumbbell Set 5–52.5 lbs — Space-Saving Design</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$119.00</span>
+            <span class="deal-orig">$199.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $80.99 (40% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🏂
+          <span class="deal-badge-corner hot">🔥 HOT</span>
+          <span class="deal-store-badge">Sport Chek</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Sports & Outdoor</div>
+          <div class="deal-name">Nike Air Zoom Pegasus 41 Running Shoes — Men's &amp; Women's</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$109.99</span>
+            <span class="deal-orig">$159.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $50 (31% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 7 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🧹
+          <span class="deal-badge-corner">-30%</span>
+          <span class="deal-store-badge">Best Buy CA</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Home Cleaning</div>
+          <div class="deal-name">Dyson V8 Absolute Cordless Vacuum with HEPA Filter</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$349.99</span>
+            <span class="deal-orig">$499.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $150 (30% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 8 -->
+      <article class="deal-card">
+        <div class="deal-card-img">
+          🏕️
+          <span class="deal-badge-corner hot">CLEARANCE</span>
+          <span class="deal-store-badge">Canadian Tire</span>
+        </div>
+        <div class="deal-body">
+          <div class="deal-category">Outdoor & BBQ</div>
+          <div class="deal-name">Weber Spirit II E-310 3-Burner Propane Gas Grill</div>
+          <div class="deal-timer">⏱ Clearance — while quantities last</div>
+          <div class="deal-pricing">
+            <span class="deal-sale">$499.99</span>
+            <span class="deal-orig">$619.99</span>
+          </div>
+          <div class="deal-savings">✅ You save $120 (19% off)</div>
+          <div class="deal-footer">
+            <a href="#" class="btn-shop">Shop Now →</a>
+            <button class="btn-save" title="Save deal">🔖</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- DEAL OF THE WEEK -->
+<section class="deal-of-week" id="deal-of-week">
+  <div class="container">
+    <div class="dotw-card">
+      <div class="dotw-content">
+        <div class="dotw-label">⭐ Deal of the Week</div>
+        <h2 class="dotw-title">Roborock S8 Pro Robot Vacuum & Mop</h2>
+        <p class="dotw-desc">The best robot vacuum under $1,000 in Canada — dual rubber brushes, 6,000 Pa suction, auto-empty dock, and works perfectly on both hardwood and carpet. This is the one Canadians are buying.</p>
+        <div class="dotw-pricing">
+          <span class="dotw-sale">$649.99</span>
+          <span class="dotw-orig">$999.99</span>
+        </div>
+        <div class="dotw-savings">🇨🇦 Save $350 CAD (35% off) — Amazon Prime eligible</div>
+        <div class="dotw-countdown" id="countdown">
+          <div class="countdown-block"><span class="countdown-num" id="cd-h">11</span><span class="countdown-label">Hours</span></div>
+          <div class="countdown-block"><span class="countdown-num" id="cd-m">47</span><span class="countdown-label">Mins</span></div>
+          <div class="countdown-block"><span class="countdown-num" id="cd-s">33</span><span class="countdown-label">Secs</span></div>
+        </div>
+        <a href="#" class="btn btn-primary" style="font-size:1rem; padding:14px 28px;">
+          🛒 Shop on Amazon.ca
+        </a>
+      </div>
+      <div class="dotw-visual">🤖</div>
+    </div>
+  </div>
+</section>
+
+<!-- STORE PARTNERS -->
+<section class="store-partners" id="store-partners">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-tag">Our Partner Stores</div>
+      <h2 class="section-heading">Canada's Top Retailers — All in One Place</h2>
+      <p class="section-sub">We work directly with Canada's biggest retailers so you never miss a sale.</p>
+    </div>
+    <div class="partners-grid">
+
+      <div class="partner-card">
+        <div class="partner-logo-wrap" style="background:#ff9900; color:#131921; font-size:1.4rem; font-weight:900;">a</div>
+        <div class="partner-name">Amazon Canada</div>
+        <div class="partner-cat">Everything + Free Shipping</div>
+        <div class="partner-deals-count">200+ deals</div>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-logo-wrap" style="background:#0071ce; color:#fff; font-size:1rem; font-weight:900; border-radius:12px;">W</div>
+        <div class="partner-name">Walmart Canada</div>
+        <div class="partner-cat">Everyday Low Prices</div>
+        <div class="partner-deals-count">120+ deals</div>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-logo-wrap" style="background:#003da5; color:#ffe000; font-size:1rem; font-weight:900;">BB</div>
+        <div class="partner-name">Best Buy Canada</div>
+        <div class="partner-cat">Tech & Electronics</div>
+        <div class="partner-deals-count">95+ deals</div>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-logo-wrap" style="background:#cc0000; color:#fff; font-size:1rem; font-weight:900;">CT</div>
+        <div class="partner-name">Canadian Tire</div>
+        <div class="partner-cat">Home, Auto & Outdoor</div>
+        <div class="partner-deals-count">80+ deals</div>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-logo-wrap" style="background:#e31837; color:#fff; font-size:0.9rem; font-weight:900;">SC</div>
+        <div class="partner-name">Sport Chek</div>
+        <div class="partner-cat">Sports & Activewear</div>
+        <div class="partner-deals-count">60+ deals</div>
+      </div>
+
+      <div class="partner-card">
+        <div class="partner-logo-wrap" style="background:#e4002b; color:#fff; font-size:1rem; font-weight:900;">TS</div>
+        <div class="partner-name">The Source</div>
+        <div class="partner-cat">Electronics & Accessories</div>
+        <div class="partner-deals-count">45+ deals</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-tag">Simple Process</div>
+      <h2 class="section-heading">How JaggyDeals Works</h2>
+      <p class="section-sub">From discovery to savings — here's how we bring you Canada's best deals.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <h3 class="step-title">We Hunt the Deals</h3>
+        <p class="step-desc">Our team monitors Amazon Canada, Walmart, Best Buy, and 30+ other retailers daily for the deepest discounts on trending products.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <h3 class="step-title">We Verify &amp; Curate</h3>
+        <p class="step-desc">Every deal is manually checked — we verify the original price history, confirm Canadian availability, and calculate real savings (not inflated "was" prices).</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <h3 class="step-title">You Click &amp; Save</h3>
+        <p class="step-desc">Browse our curated deals, click "Shop Now," and you're taken directly to the retailer's product page. No sign-up needed to browse.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num">4</div>
+        <h3 class="step-title">Get Deal Alerts</h3>
+        <p class="step-desc">Subscribe to our newsletter and we'll email you Canada's top 5 deals every week — so you never miss a flash sale or limited-time offer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter-inner">
+      <div class="nl-icon">📬</div>
+      <h2 class="nl-heading">Get the Best Canadian Deals in Your Inbox</h2>
+      <p class="nl-sub">Join 12,000+ deal-savvy Canadians who receive our weekly curated picks. No spam, just savings.</p>
+      <form class="nl-form" onsubmit="handleSubscribe(event)">
+        <input type="email" class="nl-input" placeholder="your@email.ca" required aria-label="Email address" />
+        <button type="submit" class="btn btn-primary">Subscribe 🇨🇦</button>
+      </form>
+      <p class="nl-disclaimer">By subscribing you agree to receive weekly deal emails. Unsubscribe anytime. We respect your privacy.</p>
+      <div class="nl-perks">
+        <div class="nl-perk"><span>✔</span> Weekly top 5 deals</div>
+        <div class="nl-perk"><span>✔</span> Flash sale alerts</div>
+        <div class="nl-perk"><span>✔</span> Exclusive promo codes</div>
+        <div class="nl-perk"><span>✔</span> No spam, ever</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">🍁</div>
+          <div class="logo-text">Jaggy<span>Deals</span></div>
+        </div>
+        <p>Canada's trusted affiliate deals hub. We curate the best discounts from Amazon Canada, Walmart, Best Buy, Canadian Tire, and more — updated daily for smart Canadian shoppers.</p>
+        <div class="footer-socials">
+          <div class="social-btn" title="Instagram">📸</div>
+          <div class="social-btn" title="TikTok">🎵</div>
+          <div class="social-btn" title="YouTube">▶️</div>
+          <div class="social-btn" title="Pinterest">📌</div>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Deals</h4>
+        <ul class="footer-links">
+          <li><a href="#">Today's Deals</a></li>
+          <li><a href="#">Amazon Canada</a></li>
+          <li><a href="#">Best Buy Sales</a></li>
+          <li><a href="#">Walmart Clearance</a></li>
+          <li><a href="#">Deal of the Week</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul class="footer-links">
+          <li><a href="#">Home & Kitchen</a></li>
+          <li><a href="#">Fitness & Health</a></li>
+          <li><a href="#">Tech & Gadgets</a></li>
+          <li><a href="#">Beauty & Skincare</a></li>
+          <li><a href="#">Sports & Outdoor</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#">About JaggyDeals</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Affiliate Disclosure</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2024 JaggyDeals. All rights reserved. 🇨🇦 Made for Canadians.</p>
+      <div class="affiliate-disclosure">
+        <strong>Affiliate Disclosure:</strong> JaggyDeals participates in affiliate marketing programs including the Amazon Associates Program and other retailer affiliate programs. When you click "Shop Now" and make a purchase, we may earn a small commission at no extra cost to you. This helps us keep the site running and free for everyone. We only feature products and deals we genuinely believe in.
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING PROMO -->
+<div class="float-promo" id="floatPromo">
+  <button class="float-close" onclick="document.getElementById('floatPromo').style.display='none'" aria-label="Close">✕</button>
+  <div class="float-icon">🔥</div>
+  <div class="float-text">
+    <strong>New deal just dropped!</strong>
+    <span>Ninja Foodi — 50% off at Walmart →</span>
+  </div>
+</div>
+
+<script>
+  /* ===== COUNTDOWN TIMER ===== */
+  (function() {
+    var endTime = new Date();
+    endTime.setHours(endTime.getHours() + 11, endTime.getMinutes() + 47, endTime.getSeconds() + 33);
+
+    function updateCountdown() {
+      var now = new Date();
+      var diff = Math.max(0, Math.floor((endTime - now) / 1000));
+      var h = Math.floor(diff / 3600);
+      var m = Math.floor((diff % 3600) / 60);
+      var s = diff % 60;
+      var pad = function(n) { return n < 10 ? '0' + n : n; };
+      var cdH = document.getElementById('cd-h');
+      var cdM = document.getElementById('cd-m');
+      var cdS = document.getElementById('cd-s');
+      if (cdH) cdH.textContent = pad(h);
+      if (cdM) cdM.textContent = pad(m);
+      if (cdS) cdS.textContent = pad(s);
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  })();
+
+  /* ===== CATEGORY CHIP TOGGLE ===== */
+  document.querySelectorAll('.cat-chip').forEach(function(chip) {
+    chip.addEventListener('click', function() {
+      document.querySelectorAll('.cat-chip').forEach(function(c) { c.classList.remove('active'); });
+      chip.classList.add('active');
+    });
+  });
+
+  /* ===== WISHLIST TOGGLE ===== */
+  document.querySelectorAll('.btn-save').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btn.textContent = btn.textContent === '🔖' ? '❤️' : '🔖';
+    });
+  });
+
+  /* ===== NEWSLETTER FORM ===== */
+  function handleSubscribe(e) {
+    e.preventDefault();
+    var form = e.target;
+    var input = form.querySelector('input[type="email"]');
+    var btn = form.querySelector('button[type="submit"]');
+    btn.textContent = '✅ Subscribed!';
+    btn.style.background = '#22c55e';
+    input.value = '';
+    setTimeout(function() {
+      btn.textContent = 'Subscribe 🇨🇦';
+      btn.style.background = '';
+    }, 3000);
+  }
+
+  /* ===== SMOOTH SCROLL FOR NAV ===== */
+  document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      var target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
