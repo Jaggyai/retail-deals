@@ -729,81 +729,6 @@
       letter-spacing: 0.05em;
     }
 
-    /* ===== NEWSLETTER ===== */
-    .newsletter { padding: 70px 0; }
-    .newsletter-inner {
-      background: linear-gradient(135deg, var(--navy-card) 0%, #1a3a6e 100%);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 56px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    .newsletter-inner::before {
-      content: '';
-      position: absolute;
-      top: -60px; left: 50%;
-      transform: translateX(-50%);
-      width: 400px; height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,107,43,0.1), transparent 70%);
-    }
-    .nl-icon {
-      font-size: 2.5rem;
-      margin-bottom: 16px;
-    }
-    .nl-heading {
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-    .nl-sub {
-      color: var(--muted);
-      font-size: 0.95rem;
-      max-width: 480px;
-      margin: 0 auto 32px;
-    }
-    .nl-form {
-      display: flex;
-      gap: 10px;
-      max-width: 480px;
-      margin: 0 auto 16px;
-    }
-    .nl-input {
-      flex: 1;
-      background: var(--navy);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 13px 18px;
-      color: var(--white);
-      font-size: 0.9rem;
-      font-family: var(--font-sans);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .nl-input:focus { border-color: var(--orange); }
-    .nl-input::placeholder { color: var(--muted); }
-    .nl-disclaimer {
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
-    .nl-perks {
-      display: flex;
-      justify-content: center;
-      gap: 28px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-    .nl-perk {
-      display: flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .nl-perk span { color: var(--green); }
-
     /* ===== FOOTER ===== */
     footer {
       background: var(--navy-mid);
@@ -880,39 +805,6 @@
     }
     .affiliate-disclosure strong { color: var(--orange); }
 
-    /* ===== FLOATING PROMO ===== */
-    .float-promo {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      z-index: 50;
-      background: var(--navy-card);
-      border: 1px solid var(--orange);
-      border-radius: 14px;
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-      cursor: pointer;
-      transition: transform 0.2s;
-      max-width: 280px;
-    }
-    .float-promo:hover { transform: translateY(-3px); }
-    .float-icon { font-size: 1.5rem; }
-    .float-text { font-size: 0.8rem; }
-    .float-text strong { display: block; font-size: 0.88rem; margin-bottom: 2px; }
-    .float-text span { color: var(--muted); font-size: 0.75rem; }
-    .float-close {
-      position: absolute;
-      top: 6px; right: 8px;
-      background: none; border: none;
-      color: var(--muted); cursor: pointer;
-      font-size: 0.8rem; line-height: 1;
-      padding: 2px;
-    }
-    .float-close:hover { color: var(--white); }
-
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .partners-grid { grid-template-columns: repeat(3, 1fr); }
@@ -927,14 +819,11 @@
       .hero h1 { font-size: 2rem; }
       .dotw-card { grid-template-columns: 1fr; padding: 30px; }
       .dotw-visual { height: 180px; }
-      .newsletter-inner { padding: 36px 24px; }
-      .nl-form { flex-direction: column; }
       .footer-grid { grid-template-columns: 1fr; }
       .footer-bottom { flex-direction: column; }
       .partners-grid { grid-template-columns: repeat(2, 1fr); }
       .steps-grid { grid-template-columns: 1fr; }
       .hero-stats { flex-wrap: wrap; gap: 20px; }
-      .float-promo { display: none; }
     }
     @media (max-width: 480px) {
       .deals-grid { grid-template-columns: 1fr; }
@@ -960,11 +849,10 @@
       <li><a href="#featured-deals">Deals</a></li>
       <li><a href="#store-partners">Stores</a></li>
       <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#newsletter">Newsletter</a></li>
     </ul>
     <div class="nav-cta">
       <span class="flag">🇨🇦</span>
-      <a href="#newsletter" class="btn btn-primary">Get Deal Alerts</a>
+      <a href="#featured-deals" class="btn btn-primary">Browse Deals</a>
     </div>
   </nav>
 </header>
@@ -983,8 +871,8 @@
         <a href="#featured-deals" class="btn btn-primary">
           🔥 Browse Today's Deals
         </a>
-        <a href="#newsletter" class="btn btn-outline">
-          📬 Get Email Alerts
+        <a href="#store-partners" class="btn btn-outline">
+          🏬 Browse Store Partners
         </a>
       </div>
       <div class="hero-stats">
@@ -1413,30 +1301,8 @@
       </div>
       <div class="step-card">
         <div class="step-num">4</div>
-        <h3 class="step-title">Get Deal Alerts</h3>
-        <p class="step-desc">Subscribe to our newsletter and we'll email you Canada's top 5 deals every week — so you never miss a flash sale or limited-time offer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter" id="newsletter">
-  <div class="container">
-    <div class="newsletter-inner">
-      <div class="nl-icon">📬</div>
-      <h2 class="nl-heading">Get the Best Canadian Deals in Your Inbox</h2>
-      <p class="nl-sub">Join 12,000+ deal-savvy Canadians who receive our weekly curated picks. No spam, just savings.</p>
-      <form class="nl-form" onsubmit="handleSubscribe(event)">
-        <input type="email" class="nl-input" placeholder="your@email.ca" required aria-label="Email address" />
-        <button type="submit" class="btn btn-primary">Subscribe 🇨🇦</button>
-      </form>
-      <p class="nl-disclaimer">By subscribing you agree to receive weekly deal emails. Unsubscribe anytime. We respect your privacy.</p>
-      <div class="nl-perks">
-        <div class="nl-perk"><span>✔</span> Weekly top 5 deals</div>
-        <div class="nl-perk"><span>✔</span> Flash sale alerts</div>
-        <div class="nl-perk"><span>✔</span> Exclusive promo codes</div>
-        <div class="nl-perk"><span>✔</span> No spam, ever</div>
+        <h3 class="step-title">Check Back Daily</h3>
+        <p class="step-desc">New deals are added throughout the day. Bookmark this page or follow us on social for the latest drops as they happen.</p>
       </div>
     </div>
   </div>
@@ -1499,16 +1365,6 @@
   </div>
 </footer>
 
-<!-- FLOATING PROMO -->
-<div class="float-promo" id="floatPromo">
-  <button class="float-close" onclick="document.getElementById('floatPromo').style.display='none'" aria-label="Close">✕</button>
-  <div class="float-icon">🔥</div>
-  <div class="float-text">
-    <strong>New deal just dropped!</strong>
-    <span>Ninja Foodi — 50% off at Walmart →</span>
-  </div>
-</div>
-
 <script>
   /* ===== COUNTDOWN TIMER ===== */
   (function() {
@@ -1547,21 +1403,6 @@
       btn.textContent = btn.textContent === '🔖' ? '❤️' : '🔖';
     });
   });
-
-  /* ===== NEWSLETTER FORM ===== */
-  function handleSubscribe(e) {
-    e.preventDefault();
-    var form = e.target;
-    var input = form.querySelector('input[type="email"]');
-    var btn = form.querySelector('button[type="submit"]');
-    btn.textContent = '✅ Subscribed!';
-    btn.style.background = '#22c55e';
-    input.value = '';
-    setTimeout(function() {
-      btn.textContent = 'Subscribe 🇨🇦';
-      btn.style.background = '';
-    }, 3000);
-  }
 
   /* ===== SMOOTH SCROLL FOR NAV ===== */
   document.querySelectorAll('a[href^="#"]').forEach(function(link) {
