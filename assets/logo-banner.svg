@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <style>
+      .word {
+        font-family: Arial, 'Arial Black', 'Helvetica Neue', sans-serif;
+        font-weight: 900;
+        font-size: 108px;
+        letter-spacing: -2px;
+      }
+    </style>
+  </defs>
+
+  <rect width="1200" height="630" fill="#e63329" />
+
+  <!-- subtle darker corner shading for depth, matching the flat-color banner treatment -->
+  <rect width="1200" height="630" fill="url(#shade)" />
+  <defs>
+    <radialGradient id="shade" cx="50%" cy="50%" r="75%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0.15" />
+    </radialGradient>
+  </defs>
+
+  <!-- yellow highlighter stripe behind the wordmark, red+yellow high-contrast pop -->
+  <rect x="-740" y="-46" width="1480" height="88" fill="#ffcc00"
+        transform="translate(600,315) rotate(-24)" />
+
+  <g transform="translate(600,315) rotate(-24)">
+    <!-- drop-shadow layer -->
+    <text class="word" x="0" y="0" text-anchor="middle" dominant-baseline="middle"
+          textLength="1260" lengthAdjust="spacingAndGlyphs"
+          fill="#8f0e0e" transform="translate(7,7)">BESTSAVINGSONTHENET.ORG</text>
+    <!-- main white wordmark -->
+    <text class="word" x="0" y="0" text-anchor="middle" dominant-baseline="middle"
+          textLength="1260" lengthAdjust="spacingAndGlyphs"
+          fill="#ffffff">BESTSAVINGSONTHENET.ORG</text>
+  </g>
+
+  <!-- small Canadian accent, bottom-left, echoing the existing 🍁 header mark -->
+  <text x="40" y="590" font-size="46" font-family="'Segoe UI Emoji','Apple Color Emoji',sans-serif">🍁</text>
+</svg>
